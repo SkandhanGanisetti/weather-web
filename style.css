@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 0.5s ease-in-out;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  width: 340px;
+  text-align: center;
+  color: white;
+  animation: slideIn 1s ease-out;
+}
+
+.glass-card h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+input {
+  padding: 12px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  transform: scale(1.03);
+}
+
+button {
+  padding: 12px;
+  width: 48%;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff33;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin: 5px 1%;
+}
+
+button:hover {
+  background-color: #ffffff55;
+  transform: scale(1.05);
+}
+
+#weatherResult {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+#weatherResult.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .glass-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
